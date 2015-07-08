@@ -31,9 +31,10 @@ class Users_model extends CI_Model{
     {
         $data = array();
 
-        $this->db->select('*')->form(self::TBL_USERS)->where('uid', $uid)->limit(1);
-        $query = $this->db->get();
-        if($query->num->rows() == 1)
+        $this->db->select('*');
+        $this->db->where('uid', $uid)->limit(1);
+        $query = $this->db->get(self::TBL_USERS);
+        if($query->num_rows() == 1)
         {
             $data = $query->row_array();
         }

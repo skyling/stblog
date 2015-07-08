@@ -71,7 +71,6 @@ class Login extends CI_Controller
             {
                 if($this->auth->process_login($user))
                 {
-                    echo "hello";
                     redirect($this->referrer);
                 }
             }
